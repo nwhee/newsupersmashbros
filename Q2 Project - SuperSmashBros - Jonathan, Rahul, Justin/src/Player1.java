@@ -30,7 +30,7 @@ public class Player1 {
 		x = 0;
 		y = 0;
 		health = 100;
-		speed = 10;
+		speed = 15;
 		jumpHeight = 20;
 		regularDamage = 5;
 		specialDamage = 10;
@@ -65,8 +65,8 @@ public class Player1 {
 			y = 0;
 		}
 		//floor
-		if(y > 480) {
-			y = 480; //works at tx.scale(3, 3) and Frame(600,600)
+		if(y > 450) {
+			y = 450; //works at tx.scale(3, 3) and Frame(600,600)
 		}
 		if(x < 0) {
 			x = 0;
