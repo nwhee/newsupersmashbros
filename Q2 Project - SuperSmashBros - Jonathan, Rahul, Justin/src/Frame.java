@@ -42,8 +42,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	public Frame() {
-		JFrame f = new JFrame("Crossy Street");
-		f.setSize(new Dimension(600, 600));
+		JFrame f = new JFrame("super smash bros game");
+		f.setSize(new Dimension(965, 565));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.setResizable(false);
