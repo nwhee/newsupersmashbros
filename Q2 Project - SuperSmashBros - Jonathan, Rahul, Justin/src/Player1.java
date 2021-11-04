@@ -18,8 +18,8 @@ public class Player1 {
 	private double ultimateDamage;
 	private double jumpHeight;
 	private double speed;
-	private int fallSpeed = 0;
-	private int gravity = 1;
+	private double fallSpeed = 0;
+	private double gravity = 1.5;
 	
 	private Image img;
 	private AffineTransform tx;
@@ -31,7 +31,7 @@ public class Player1 {
 		y = 0;
 		health = 100;
 		speed = 15;
-		jumpHeight = 20;
+		jumpHeight = 35;
 		regularDamage = 5;
 		specialDamage = 10;
 		ultimateDamage = 30;
@@ -79,13 +79,13 @@ public class Player1 {
 	}
 	
 	public void moveRight() {
-		x += 5;
+		x += speed;
 	}
 	public void moveLeft() {
-		x -= 5;
+		x -= speed;
 	}
 	public void jump() {
-		fallSpeed = -10;
+		fallSpeed = jumpHeight * -.5;
 	}
 	
 	//getters
