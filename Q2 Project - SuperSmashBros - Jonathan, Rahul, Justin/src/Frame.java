@@ -18,6 +18,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//CREATE THE OBJECT (STEP 1)
 	Background 	bg 	= new Background(0, 0);
 	
+	Stage platform = new Stage(0, 0);
+	
 	Player1 Albert = new Player1();
 
 
@@ -27,6 +29,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		bg.paint(g);
 		
 		//stage object
+		platform.paint(g);
 		
 		//player1 object
 		Albert.paint(g);
