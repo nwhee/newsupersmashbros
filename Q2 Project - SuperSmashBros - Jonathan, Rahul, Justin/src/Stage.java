@@ -40,7 +40,7 @@ public class Stage {
 		tx.setToTranslation(a, b);
 		
 		//use THIS for scaling the stage
-		tx.scale(1, 1);
+		tx.scale(1.5, 1.2);
 	}
 
 	private Image getImage(String path) {

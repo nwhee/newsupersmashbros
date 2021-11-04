@@ -16,9 +16,9 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
 	//CREATE THE OBJECT (STEP 1)
-	Background 	bg 	= new Background(0, 0);
+	Background 	bg 	= new Background(0,0);
 	
-	Stage platform = new Stage(0, 0);
+	Stage platform = new Stage(100, 270);
 	
 	Player1 Albert = new Player1();
 
