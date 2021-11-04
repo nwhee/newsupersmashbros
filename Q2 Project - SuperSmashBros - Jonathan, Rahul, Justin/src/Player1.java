@@ -85,7 +85,7 @@ public class Player1 {
 		x -= 5;
 	}
 	public void jump() {
-		y -= 50;
+		fallSpeed = -10;
 	}
 	
 	//getters
