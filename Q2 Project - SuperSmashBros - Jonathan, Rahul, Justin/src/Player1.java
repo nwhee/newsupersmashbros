@@ -26,9 +26,9 @@ public class Player1 {
 	
 	
 	//constructors
-	public Player1() {
-		x = 0;
-		y = 0;
+	public Player1(int x, int y) {
+		this.x = x;
+		this.y = y;
 		health = 100;
 		speed = 15;
 		jumpHeight = 35;
@@ -80,13 +80,16 @@ public class Player1 {
 	
 	public void moveRight() {
 		x += speed;
+		img = getImage("/imgs/player1.png");
 	}
 	public void moveLeft() {
 		x -= speed;
+		img = getImage("/imgs/player1flipped.png");
 	}
 	public void jump() {
 		fallSpeed = jumpHeight * -.5;
 	}
+
 	
 	//getters
 	public double getHealth() {
