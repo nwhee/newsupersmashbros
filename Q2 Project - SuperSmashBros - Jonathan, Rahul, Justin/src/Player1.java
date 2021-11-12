@@ -102,6 +102,13 @@ public class Player1 {
 		return specialDamage;
 	}
 	
+	public double getX() {
+		return x;
+	}
+	public double getY() {
+		return y;
+	}
+	
 	//setters
 	public void setHealth() {
 		health -= hLost;

@@ -20,9 +20,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	Stage platform = new Stage(100, 270);
 	
-	Player1 Albert = new Player1(0, 200);
+	Player1 Albert = new Player1(200,200);
 	
-	Projectile rocket = new Projectile(100, 10000);
+	private int p1JumpCounter = 2;
 
 
 	public void paint(Graphics g) {
@@ -36,8 +36,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		
-		//projectile object
-		rocket.paint(g);
+			p1JumpCounter = 2;
+		}
+
 		
 	}
 	
@@ -99,14 +100,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			System.out.println(arg0.getKeyCode());
 		if(arg0.getKeyCode() == 37) {
 			Albert.moveLeft();
-		
 		}
 		if(arg0.getKeyCode() == 39) {
 			Albert.moveRight();
-			
 		}
-		if(arg0.getKeyCode() == 38) {
+		if(arg0.getKeyCode() == 38 && p1JumpCounter > 0) {
 			Albert.jump();
+			p1JumpCounter--;
 		}
 
 	}
