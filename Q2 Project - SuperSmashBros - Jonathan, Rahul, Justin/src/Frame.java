@@ -36,6 +36,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		
+		if(Albert.getY() == 450) {
 			p1JumpCounter = 2;
 		}
 
