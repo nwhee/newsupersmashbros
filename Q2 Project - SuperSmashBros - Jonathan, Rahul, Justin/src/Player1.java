@@ -67,6 +67,7 @@ public class Player1 {
 		//floor
 		if(y > 250) {
 			y = 250; //works at tx.scale(3, 3) and Frame(600,600)
+			//test comment
 		}
 		if(x < 0) {
 			x = 0;
