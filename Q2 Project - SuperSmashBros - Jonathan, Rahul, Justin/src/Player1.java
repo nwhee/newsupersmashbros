@@ -64,10 +64,9 @@ public class Player1 {
 		if(y < 0) {
 			y = 0;
 		}
-		//floor
-		if(y > 250) {
+		//stage floor limit
+		if(y > 250) {  
 			y = 250; //works at tx.scale(3, 3) and Frame(600,600)
-			//test comment
 		}
 		if(x < 0) {
 			x = 0;
