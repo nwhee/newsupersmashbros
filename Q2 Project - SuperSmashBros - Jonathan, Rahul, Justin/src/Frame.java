@@ -36,9 +36,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		
-		if(Albert.getY() == 450) {
+		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
+		else {
+			Albert.onStage = false;
+		}
+		
+		
 
 		
 	}
@@ -105,10 +110,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(arg0.getKeyCode() == 39) {
 			Albert.moveRight();
 		}
-		if(arg0.getKeyCode() == 38 && p1JumpCounter > 0) {
+		if(arg0.getKeyCode() == 88 && p1JumpCounter > 0) {
 			Albert.jump();
 			p1JumpCounter--;
 		}
+		if(arg0.getKeyCode() == 67) {
+			
+		}
+
+		
 
 	}
 
