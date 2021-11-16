@@ -39,14 +39,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
+<<<<<<< HEAD
 		else {
 			Albert.onStage = false;
 		}
 		
 		
+=======
+		}
+>>>>>>> branch 'master' of https://github.com/nwhee/newsupersmashbros.git
 
 		
-	}
+	
 	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
