@@ -32,8 +32,8 @@ public class Player1 {
 		this.x = x;
 		this.y = y;
 		health = 100;
-		speed = 15;
-		jumpHeight = 35;
+		speed = 7;
+		jumpHeight = 36;
 		regularDamage = 5;
 		specialDamage = 10;
 		ultimateDamage = 30;

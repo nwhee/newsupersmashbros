@@ -23,6 +23,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Player1 Albert = new Player1(200,200);
 	
 	private int p1JumpCounter = 2;
+	private boolean p1MoveLeft = false;
+	private boolean p1MoveRight = false;
 
 
 	public void paint(Graphics g) {
@@ -41,6 +43,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		else {
 			Albert.onStage = false ;
+		}
+		if(p1MoveLeft) {
+			Albert.moveLeft();
+		}
+		if(p1MoveRight) {
+			Albert.moveRight();
 		}
 	}	
 	
@@ -105,10 +113,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
 		if(arg0.getKeyCode() == 37) {
-			Albert.moveLeft();
+			p1MoveLeft = true;
 		}
 		if(arg0.getKeyCode() == 39) {
-			Albert.moveRight();
+			p1MoveRight = true;
 		}
 		if(arg0.getKeyCode() == 88 && p1JumpCounter > 0) {
 			Albert.jump();
@@ -125,7 +133,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		if(arg0.getKeyCode() == 37) {
+			p1MoveLeft = false;
+		}
+		if(arg0.getKeyCode() == 39) {
+			p1MoveRight = false;
+		}
 	}
 
 	@Override
