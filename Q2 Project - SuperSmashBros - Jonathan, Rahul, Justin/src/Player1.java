@@ -67,7 +67,7 @@ public class Player1 {
 			y = 0;
 		}
 		//stage floor limit
-		if(y > 250 && y < 270&& x > 130 && x < 800) {  
+		if(y > 250 && y < 275&& x > 130 && x < 800) {  
 			y = 250; //works at tx.scale(3, 3) and Frame(600,600)
 			onStage = true;
 			
