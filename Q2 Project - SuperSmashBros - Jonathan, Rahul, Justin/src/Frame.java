@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -25,6 +26,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
+	
+	private double health1 = 100;
+	
+	private double health2 = 100;
 
 
 	public void paint(Graphics g) {
@@ -50,6 +55,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(p1MoveRight) {
 			Albert.moveRight();
 		}
+		
+		if (health1 == 0); //example code for when health reaches 0 reset both players health
+		health1 = 100;
+		health2 = 100; 
+		
+		if (health2 == 0);
+		health1 = 100;
+		health2 = 100;
+		
+		Font c = new Font("Courier", Font.BOLD, 60);
+		g.setFont(c);
+		g.setColor(Color.BLACK);
+		g.drawString(health1+"%", 175, 500);
+		g.drawString(health2+"%", 575, 500);		
 	}	
 	
 
