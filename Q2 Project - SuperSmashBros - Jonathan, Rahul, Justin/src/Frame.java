@@ -18,7 +18,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//CREATE THE OBJECT (STEP 1)
 	Background 	bg 	= new Background(0,0);
 	
-	Stage platform = new Stage(100, 270);
+	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200);
 	
