@@ -17,7 +17,7 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
 	//CREATE THE OBJECT (STEP 1)
-	Background 	bg 	= new Background(0,0);
+	Background[] backs;
 	
 	Stage platform = new Stage(100, 230);
 	
@@ -30,12 +30,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private double health1 = 100;
 	
 	private double health2 = 100;
+	
+	private int bg = (int)(Math.random()*3);
 
 
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		
-		bg.paint(g);
+		backs[bg].paint(g);
 		
 		//stage object
 		platform.paint(g);
@@ -80,6 +82,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	public Frame() {
+		backs = new Background[3]; //creating an array for the 3 backgrounds
+		Background bg0 = new Background(0,0, "/imgs/skyBG.png");  //daytime 
+		
+		Background bg1 = new Background(0,0, "/imgs/skynightBG.png"); //noon    
+		
+		Background bg2 = new Background(0,0, "/imgs/skynoonBG.jpg");  //night
+		
+		backs[0] = bg0;
+		backs[1] = bg1;
+		backs[2] = bg2;		
+		
 		JFrame f = new JFrame("super smash bros game");
 		f.setSize(new Dimension(965, 565));
 		f.setBackground(Color.blue);
