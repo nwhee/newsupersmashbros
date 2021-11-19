@@ -60,7 +60,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		//projectile object
 		specialA.paint(g);
-
+ 
 		
 		//player1
 		if(Albert.getY() == 250 && Albert.onStage) {
