@@ -21,6 +21,8 @@ public class Player1 {
 	private double fallSpeed = 0;
 	private double gravity = 1.5;
 	
+	public boolean onStage = false;
+	
 	private Image img;
 	private AffineTransform tx;
 	
@@ -30,8 +32,8 @@ public class Player1 {
 		this.x = x;
 		this.y = y;
 		health = 100;
-		speed = 15;
-		jumpHeight = 35;
+		speed = 7;
+		jumpHeight = 36;
 		regularDamage = 5;
 		specialDamage = 10;
 		ultimateDamage = 30;
@@ -65,9 +67,20 @@ public class Player1 {
 			y = 0;
 		}
 		//stage floor limit
-		if(y > 250) {  
+		if(y > 250 && y < 280&& x > 135 && x < 800) {  
 			y = 250; //works at tx.scale(3, 3) and Frame(600,600)
+			onStage = true;
+			
 		}
+		else {
+			onStage = false;
+		}
+		
+		
+		if(onStage) {
+			fallSpeed = 0;
+		}
+		
 		if(x < 0) {
 			x = 0;
 		}

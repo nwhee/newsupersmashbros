@@ -13,8 +13,8 @@ public class Background{
 	private Image img; 	
 	private AffineTransform tx;
 
-	public Background(int x, int y) {
-		img = getImage("/imgs/skyBG.png"); //load the image for Tree
+	public Background(int x, int y, String fn) {
+		img = getImage(fn); //load the image for Tree
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
