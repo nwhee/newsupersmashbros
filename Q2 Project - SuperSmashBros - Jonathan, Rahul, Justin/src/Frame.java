@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
@@ -18,11 +19,25 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//CREATE THE OBJECT (STEP 1)
 	Background 	bg 	= new Background(0,0);
 	
-	Stage platform = new Stage(100, 270);
+	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200);
+	Player1 Bertrand = new Player1(750, 200);
+	
+	Projectile specialA = new Projectile(100, 100);
+
 	
 	private int p1JumpCounter = 2;
+	private boolean p1MoveLeft = false;
+	private boolean p1MoveRight = false;
+	
+	private int p2JumpCounter = 2;
+	private boolean p2MoveLeft = false;
+	private boolean p2MoveRight = false;
+	
+	private double health1 = 100;
+
+	private double health2 = 100;
 
 
 	public void paint(Graphics g) {
@@ -36,17 +51,68 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		
-		if(Albert.getY() == 450) {
-			p1JumpCounter = 2;
-		}
-		}
+		//player2 object
+		Bertrand.paint(g);
+		
+		//projectile object
+		specialA.paint(g);
 
 		
-	
+		//player1
+		if(Albert.getY() == 250 && Albert.onStage) {
+			p1JumpCounter = 2;
+		}
+		else {
+			Albert.onStage = false ;
+		}
+		if(p1MoveLeft) {
+			Albert.moveLeft();
+		}
+		if(p1MoveRight) {
+			Albert.moveRight();
+		}
+		
+		//player2
+		if(Bertrand.getY() == 250 && Bertrand.onStage) {
+			p2JumpCounter = 2;
+		}
+		else {
+			Bertrand.onStage = false ;
+		}
+		if(p2MoveLeft) {
+			Bertrand.moveLeft();
+		}
+		if(p2MoveRight) {
+			Bertrand.moveRight();
+		}
+		
+		if (health1 == 0); //example code for when health reaches 0 reset both players health
+		health1 = 100;
+		health2 = 100; 
+
+		if (health2 == 0);
+		health1 = 100;
+		health2 = 100;
+
+		Font c = new Font("Courier", Font.BOLD, 60);
+		g.setFont(c);
+		g.setColor(Color.BLACK);
+		g.drawString(health1+"%", 175, 500);
+		g.drawString(health2+"%", 575, 500);
+	}	
+
+		
+//	Rectangle Albert1 = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
+//	Rectangle Bertrand1 = new Rectangle(Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
+//	
+//	Rectangle special1 = new Rectangle(specialA.getX() + Albert.getWidth(), specialA.getY(), specialA.getWidth(), specialA.getHeight());
+//	Rectangle special2 = new Rectangle(specialB.getX() + Bertrand.getWidth(), specialB.getY(), specialB.getWidth(), specialB.getHeight());
+
 	
 	public static void main(String[] arg) {
 		Frame f = new Frame();
 	}
+
 	
 	public Frame() {
 		JFrame f = new JFrame("super smash bros game");
@@ -99,23 +165,57 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-			System.out.println(arg0.getKeyCode());
-		if(arg0.getKeyCode() == 37) {
+		System.out.println(arg0.getKeyCode());
+		
+		//player1 movement + actions
+		if(arg0.getKeyCode() == 65) {
 			Albert.moveLeft();
+			p1MoveLeft = true;
 		}
-		if(arg0.getKeyCode() == 39) {
+		if(arg0.getKeyCode() == 68) {
 			Albert.moveRight();
+			p1MoveRight = true;
 		}
-		if(arg0.getKeyCode() == 38 && p1JumpCounter > 0) {
+		if(arg0.getKeyCode() == 87 && p1JumpCounter > 0) {
 			Albert.jump();
 			p1JumpCounter--;
 		}
+		
+		//player2 movement + actions
+		if(arg0.getKeyCode() == 37) {
+			Bertrand.moveLeft();
+			p2MoveLeft = true;
+		}
+		if(arg0.getKeyCode() == 39) {
+			Bertrand.moveRight();
+			p2MoveRight = true;
+		}
+		if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {
+			Bertrand.jump();
+			p2JumpCounter--;
+		}
+		
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
+		//player1 movement
+		if(arg0.getKeyCode() == 65) {
+			p1MoveLeft = false;
+		}
+		if(arg0.getKeyCode() == 68) {
+			p1MoveRight = false;
+		}
+		
+		//player2 movement
+		if(arg0.getKeyCode() == 37) {
+			p2MoveLeft = false;
+		}
+		if(arg0.getKeyCode() == 39) {
+			p2MoveRight = false;
+		}
 		
 	}
 
