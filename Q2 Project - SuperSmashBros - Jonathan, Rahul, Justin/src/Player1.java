@@ -123,7 +123,7 @@ public class Player1 {
 	}
 	
 	//setters
-	public void setHealth() {
+	public void setHealth(int hLost) {
 		health -= hLost;
 	}
 

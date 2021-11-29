@@ -88,6 +88,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		health1 = 100;
 		health2 = 100;
 		
+		health1 = Albert.getHealth();
+		health2 = Bertrand.getHealth();
+		
 		Font c = new Font("Courier", Font.BOLD, 60);
 		g.setFont(c);
 		g.setColor(Color.BLACK);
@@ -182,6 +185,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				Albert.jump();
 				p1JumpCounter--;
 			}
+			if(arg0.getKeyCode() == 81) {
+				Albert.setHealth(10);
+			}
 			
 			//player2 movement + actions
 			if(arg0.getKeyCode() == 37) {
@@ -195,9 +201,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {
 				Bertrand.jump();
 				p2JumpCounter--;
-			}
-		
-
+			}			
+			
 	}
 
 	@Override
