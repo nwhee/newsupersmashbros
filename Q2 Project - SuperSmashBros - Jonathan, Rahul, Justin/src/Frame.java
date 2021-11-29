@@ -22,15 +22,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200);
-	Player1 Bertrand = new Player1(750, 200);
+	Player1 Bertrand = new Player1(750,200);
 	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
-	
-	private int p2JumpCounter = 2;
-	private boolean p2MoveLeft = false;
-	private boolean p2MoveRight = false;
 	
 	private double health1 = 100;
 	
@@ -49,8 +45,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		//player1 object
 		Albert.paint(g);
-		
-		//player2 object
 		Bertrand.paint(g);
 		
 		if(Albert.getY() == 250 && Albert.onStage) {
@@ -66,20 +60,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.moveRight();
 		}
 		
-		//player2
-		if(Bertrand.getY() == 250 && Bertrand.onStage) {
-			p2JumpCounter = 2;
-		}
-		else {
-			Bertrand.onStage = false ;
-		}
-		if(p2MoveLeft) {
-			Bertrand.moveLeft();
-		}
-		if(p2MoveRight) {
-			Bertrand.moveRight();
-		}
-		
 		if (health1 == 0); //example code for when health reaches 0 reset both players health
 		health1 = 100;
 		health2 = 100; 
@@ -87,6 +67,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if (health2 == 0);
 		health1 = 100;
 		health2 = 100;
+		
 		
 		health1 = Albert.getHealth();
 		health2 = Bertrand.getHealth();
@@ -98,9 +79,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawString(health2+"%", 575, 500);		
 	}	
 	
-	//Code for making rectangles - I will update player1
-	//Rectangle Albert1 = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
-	//Rectangle Bertrand1 = new Rectangle(Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
+
 		
 	
 	
@@ -171,56 +150,35 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
+		if(arg0.getKeyCode() == 37) {
+			p1MoveLeft = true;
+		}
+		if(arg0.getKeyCode() == 39) {
+			p1MoveRight = true;
+		}
+		if(arg0.getKeyCode() == 88 && p1JumpCounter > 0) {
+			Albert.jump();
+			p1JumpCounter--;
+		}
+		/*if(arg0.getKeyCode() == 67) {
 			
-			//player1 movement + actions
-			if(arg0.getKeyCode() == 65) {
-				Albert.moveLeft();
-				p1MoveLeft = true;
-			}
-			if(arg0.getKeyCode() == 68) {
-				Albert.moveRight();
-				p1MoveRight = true;
-			}
-			if(arg0.getKeyCode() == 87 && p1JumpCounter > 0) {
-				Albert.jump();
-				p1JumpCounter--;
-			}
-			if(arg0.getKeyCode() == 81) {
-				Albert.setHealth(10);
-			}
-			
-			//player2 movement + actions
-			if(arg0.getKeyCode() == 37) {
-				Bertrand.moveLeft();
-				p2MoveLeft = true;
-			}
-			if(arg0.getKeyCode() == 39) {
-				Bertrand.moveRight();
-				p2MoveRight = true;
-			}
-			if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {
-				Bertrand.jump();
-				p2JumpCounter--;
-			}			
-			
+		}*/
+		if(arg0.getKeyCode() == 81) {
+			Albert.setHealth(10);
+		}
+
+		
+
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		if(arg0.getKeyCode() == 65) {
+		if(arg0.getKeyCode() == 37) {
 			p1MoveLeft = false;
 		}
-		if(arg0.getKeyCode() == 68) {
-			p1MoveRight = false;
-		}
-		
-		//player2 movement
-		if(arg0.getKeyCode() == 37) {
-			p2MoveLeft = false;
-		}
 		if(arg0.getKeyCode() == 39) {
-			p2MoveRight = false;
+			p1MoveRight = false;
 		}
 	}
 
