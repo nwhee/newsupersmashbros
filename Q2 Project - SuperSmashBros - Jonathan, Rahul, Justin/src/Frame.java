@@ -22,6 +22,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200);
+	Player1 Bertrand = new Player1(750,200);
 	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
@@ -44,6 +45,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		//player1 object
 		Albert.paint(g);
+		Bertrand.paint(g);
 		
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
@@ -65,6 +67,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if (health2 == 0);
 		health1 = 100;
 		health2 = 100;
+		
+		
+		health1 = Albert.getHealth();
+		health2 = Bertrand.getHealth();
 		
 		Font c = new Font("Courier", Font.BOLD, 60);
 		g.setFont(c);
@@ -154,8 +160,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.jump();
 			p1JumpCounter--;
 		}
-		if(arg0.getKeyCode() == 67) {
+		/*if(arg0.getKeyCode() == 67) {
 			
+		}*/
+		if(arg0.getKeyCode() == 81) {
+			Albert.setHealth(10);
 		}
 
 		
