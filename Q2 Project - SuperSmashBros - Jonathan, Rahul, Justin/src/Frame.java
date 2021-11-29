@@ -28,6 +28,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
 	
+	private int p2JumpCounter = 2;
+	private boolean p2MoveLeft = false;
+	private boolean p2MoveRight = false;
+	
 	private double health1 = 100;
 	
 	private double health2 = 100;
@@ -58,6 +62,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		if(p1MoveRight) {
 			Albert.moveRight();
+		}
+		
+		//player2
+		if(Bertrand.getY() == 250 && Bertrand.onStage) {
+			p2JumpCounter = 2;
+		}
+		else {
+			Bertrand.onStage = false ;
+		}
+		if(p2MoveLeft) {
+			Bertrand.moveLeft();
+		}
+		if(p2MoveRight) {
+			Bertrand.moveRight();
 		}
 		
 		if (health1 == 0); //example code for when health reaches 0 reset both players health
@@ -150,13 +168,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
-		if(arg0.getKeyCode() == 37) {
+		if(arg0.getKeyCode() == 65) {
 			p1MoveLeft = true;
 		}
-		if(arg0.getKeyCode() == 39) {
+		if(arg0.getKeyCode() == 68) {
 			p1MoveRight = true;
 		}
-		if(arg0.getKeyCode() == 88 && p1JumpCounter > 0) {
+		if(arg0.getKeyCode() == 87 && p1JumpCounter > 0) {
 			Albert.jump();
 			p1JumpCounter--;
 		}
@@ -167,18 +185,36 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.setHealth(10);
 		}
 
-		
+		//player2 movement + actions
+		if(arg0.getKeyCode() == 37) {
+			p2MoveLeft = true;
+		}
+		if(arg0.getKeyCode() == 39) {
+			p2MoveRight = true;
+		}
+		if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {
+			Bertrand.jump();
+			p2JumpCounter--;
+		}
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
-		if(arg0.getKeyCode() == 37) {
+		if(arg0.getKeyCode() == 65) {
 			p1MoveLeft = false;
 		}
-		if(arg0.getKeyCode() == 39) {
+		if(arg0.getKeyCode() == 68) {
 			p1MoveRight = false;
+		}
+		
+		//player2 movement
+		if(arg0.getKeyCode() == 37) {
+			p2MoveLeft = false;
+		}
+		if(arg0.getKeyCode() == 39) {
+			p2MoveRight = false;
 		}
 	}
 
