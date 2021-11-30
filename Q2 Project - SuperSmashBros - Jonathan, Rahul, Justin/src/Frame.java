@@ -21,8 +21,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	Stage platform = new Stage(100, 230);
 	
-	Player1 Albert = new Player1(200,200);
-	Player1 Bertrand = new Player1(750,200);
+	Player1 Albert = new Player1(200,200,true);
+	Player1 Bertrand = new Player1(750,200,false);
 	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;

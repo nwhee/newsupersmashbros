@@ -21,14 +21,21 @@ public class Player1 {
 	private double fallSpeed = 0;
 	private double gravity = 1.5;
 	
+	private boolean p1;
+	private String p1Left = "/imgs/player1flipped.png";
+	private String p1Right = "/imgs/player1.png";
+	private String p2Left = "/imgs/p2Left.png";
+	private String p2Right = "/imgs/p2Right.png";
+	
 	public boolean onStage = false;
 	
 	private Image img;
 	private AffineTransform tx;
 	
 	
+	
 	//constructors
-	public Player1(int x, int y) {
+	public Player1(int x, int y, boolean p1) {
 		this.x = x;
 		this.y = y;
 		health = 100;
@@ -38,10 +45,18 @@ public class Player1 {
 		specialDamage = 10;
 		ultimateDamage = 30;
 		
-		img = getImage("/imgs/player1.png");
-		
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y);
+		
+		if(p1) {
+			img = getImage(p1Right);
+		}
+		else {
+			img = getImage(p2Left);
+		}
+		
+		
+		
 	}
 	
 	public void changePicture(String newFileName) {
@@ -93,11 +108,22 @@ public class Player1 {
 	
 	public void moveRight() {
 		x += speed;
-		img = getImage("/imgs/player1.png");
+		if(p1) {
+			img = getImage(p1Right);
+		}
+		else {
+			img = getImage(p2Right);
+		}
+		
 	}
 	public void moveLeft() {
 		x -= speed;
-		img = getImage("/imgs/player1flipped.png");
+		if(p1) {
+			img = getImage(p1Left);
+		}
+		else {
+			img = getImage(p2Left);
+		}
 	}
 	public void jump() {
 		fallSpeed = jumpHeight * -.5;
