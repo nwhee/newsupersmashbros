@@ -169,10 +169,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
 		if(arg0.getKeyCode() == 65) {
+			Albert.setP1(true);
 			p1MoveLeft = true;
 			
 		}
 		if(arg0.getKeyCode() == 68) {
+			Albert.setP1(true);
 			p1MoveRight = true;
 		}
 		if(arg0.getKeyCode() == 87 && p1JumpCounter > 0) {
@@ -188,9 +190,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		//player2 movement + actions
 		if(arg0.getKeyCode() == 37) {
+			Bertrand.setP1(false);
 			p2MoveLeft = true;
 		}
 		if(arg0.getKeyCode() == 39) {
+			Bertrand.setP1(false);
 			p2MoveRight = true;
 		}
 		if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {

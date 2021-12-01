@@ -152,6 +152,9 @@ public class Player1 {
 	public void setHealth(int hLost) {
 		health -= hLost;
 	}
+	public void setP1(boolean newP1) {
+		p1 = newP1;
+	}
 
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
