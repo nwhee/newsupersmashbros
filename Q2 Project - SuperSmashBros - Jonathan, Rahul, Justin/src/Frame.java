@@ -24,7 +24,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Player1 Albert = new Player1(200,200,true, true);
 	Player1 Bertrand = new Player1(750,200,false, false);
 	
-	Fireball test = new Fireball(100,210);
 	Projectile specialA = new Projectile(1000, 1000);
 	
 	private int p1JumpCounter = 2;
