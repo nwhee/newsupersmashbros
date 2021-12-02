@@ -198,11 +198,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			
 		}*/
 		//function testing button - press q to test
-		if(arg0.getKeyCode() == 81) {
-			Albert.setHealth(10);
-			test.shotRight();
-			
-		}
 		if(arg0.getKeyCode() == 82) {
 			Albert.fire();
 		}
