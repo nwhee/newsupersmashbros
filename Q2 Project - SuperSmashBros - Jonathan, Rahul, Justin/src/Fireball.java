@@ -49,6 +49,7 @@ public class Fireball {
 		//to scale it up or down to change the size 
 		tx.scale(.5, .5);
 	}
+	//test
 	
 	
 	public void shotLeft() {
