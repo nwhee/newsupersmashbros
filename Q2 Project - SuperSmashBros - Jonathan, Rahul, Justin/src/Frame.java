@@ -52,7 +52,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		Bertrand.paint(g);
-		test.paint(g);
 		specialA.paint(g);
 		
 		if(Albert.getY() == 250 && Albert.onStage) {
