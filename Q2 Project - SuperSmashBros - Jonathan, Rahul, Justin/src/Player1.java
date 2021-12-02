@@ -11,8 +11,8 @@ public class Player1 {
 	private int x, y;
 	private double health;
 	private double hLost;
-	private double height;
-	private double width;
+	private int height;
+	private int width;
 	private double regularDamage;
 	private double specialDamage;
 	private double ultimateDamage;
@@ -28,6 +28,7 @@ public class Player1 {
 	private String p2Right = "/imgs/p2Right.png";
 	
 	public boolean onStage = false;
+	private boolean facingRight;
 	
 	private Image img;
 	private AffineTransform tx;
@@ -35,7 +36,7 @@ public class Player1 {
 	
 	
 	//constructors
-	public Player1(int x, int y, boolean p1) {
+	public Player1(int x, int y, boolean p1, boolean facingR) {
 		this.x = x;
 		this.y = y;
 		health = 100;
@@ -44,6 +45,9 @@ public class Player1 {
 		regularDamage = 5;
 		specialDamage = 10;
 		ultimateDamage = 30;
+		width = 27;
+		height = 90;
+		facingRight = facingR;
 		
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y);
@@ -114,6 +118,7 @@ public class Player1 {
 		else {
 			img = getImage(p2Right);
 		}
+		facingRight = true;
 		
 	}
 	public void moveLeft() {
@@ -124,9 +129,21 @@ public class Player1 {
 		else {
 			img = getImage(p2Left);
 		}
+		facingRight = false;
 	}
 	public void jump() {
 		fallSpeed = jumpHeight * -.5;
+	}
+	public void fire() {
+		Projectile.setX(x + width);
+		Projectile.setY(y);
+		if(facingRight) {
+			//Projectile.setVelocity(5);
+			Projectile.moveRight();
+		}else {
+			//Projectile.setVelocity(-5);
+			Projectile.moveLeft();
+		}
 	}
 
 	
@@ -141,11 +158,17 @@ public class Player1 {
 		return specialDamage;
 	}
 	
-	public double getX() {
+	public int getX() {
 		return x;
 	}
-	public double getY() {
+	public int getY() {
 		return y;
+	}
+	public int getWidth() {
+		return width;
+	}
+	public int getHeight() {
+		return height;
 	}
 	
 	//setters

@@ -21,10 +21,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	Stage platform = new Stage(100, 230);
 	
-	Player1 Albert = new Player1(200,200,true);
-	Player1 Bertrand = new Player1(750,200,false);
+	Player1 Albert = new Player1(200,200,true, true);
+	Player1 Bertrand = new Player1(750,200,false, false);
 	
 	Fireball test = new Fireball(100,210);
+	Projectile specialA = new Projectile(1000, 1000);
 	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
@@ -53,6 +54,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Albert.paint(g);
 		Bertrand.paint(g);
 		test.paint(g);
+		specialA.paint(g);
 		
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
@@ -97,7 +99,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setFont(c);
 		g.setColor(Color.BLACK);
 		g.drawString(health1+"%", 175, 500);
-		g.drawString(health2+"%", 575, 500);		
+		g.drawString(health2+"%", 575, 500);
+		
+		Rectangle Albert1 = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
+		Rectangle Bertrand1 = new Rectangle(Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
+		
+		Rectangle special1 = new Rectangle(specialA.getX(), specialA.getY(), specialA.getWidth(), specialA.getHeight());
+		
+		if(special1.intersects(Bertrand1)) {
+			Bertrand.setHealth(10);
+			specialA.reset();
+		}
 	}	
 	
 
@@ -192,6 +204,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.setHealth(10);
 			test.shotRight();
 			
+		}
+		if(arg0.getKeyCode() == 82) {
+			Albert.fire();
 		}
 
 		//player2 movement + actions

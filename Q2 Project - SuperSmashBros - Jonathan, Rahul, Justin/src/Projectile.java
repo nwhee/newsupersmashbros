@@ -7,14 +7,16 @@ import java.net.URL;
 
 public class Projectile {
 	
-	private int x, y;
-	private int speed;
+	private static int x, y;
+	private static int speed;
 	private int ow = 75, ol = 45;
-	private Image img;
+	private static Image img;
 	private AffineTransform tx;
 	
 	
 	public Projectile(int x, int y) {
+		this.x = x;
+		this.y = y;
 		img = getImage("/imgs/spaceship.gif"); //load the image for Tree
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
@@ -25,7 +27,11 @@ public class Projectile {
 	/* update variables here */
 	private void update() {
 		x += speed;
-		speed = 10;
+		//speed = 10;
+		tx.setToTranslation(x, y);
+		
+		//to scale it up or down to change the size 
+		tx.scale(5, 5);
 	}
 	
 	/* Drawing commands */
@@ -40,24 +46,55 @@ public class Projectile {
 		
 	}
 	
-	public void fire() {
-		
-		speed = 5;
+	public static void moveRight() {
+		speed = 10;
+		img = getImage("/imgs/spaceshipflipped-13.png");
 	}
+	public static void moveLeft() {
+		speed = -10;
+		img = getImage("/imgs/spaceship-13.png");
+	}
+	
+//	public void fire() {
+//		
+//		speed = 5;
+//	}
 	
 	public void reset() {
 		x = 10000;
 		y = 10000;
 		speed = 0;
 	}
+	
+	//getters
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public int getWidth() {
+		return ow;
+	}
+	public int getHeight() {
+		return ol;
+	}
 
+	//setters
+	public static void setX(int paramX) {
+		x = paramX;
+	}
+	public static void setY(int paramY) {
+		y = paramY;
+	}
+	
 	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(5, 5);
 	}
 
-	private Image getImage(String path) {
+	private static Image getImage(String path) {
 		Image tempImage = null;
 		try {
 			URL imageURL = Background.class.getResource(path);
