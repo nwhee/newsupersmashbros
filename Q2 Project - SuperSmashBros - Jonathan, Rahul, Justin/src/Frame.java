@@ -24,6 +24,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Player1 Albert = new Player1(200,200,true);
 	Player1 Bertrand = new Player1(750,200,false);
 	
+	Fireball test = new Fireball(100,210);
+	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
@@ -50,6 +52,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//player1 object
 		Albert.paint(g);
 		Bertrand.paint(g);
+		test.paint(g);
 		
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
@@ -184,8 +187,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		/*if(arg0.getKeyCode() == 67) {
 			
 		}*/
+		//function testing button - press q to test
 		if(arg0.getKeyCode() == 81) {
 			Albert.setHealth(10);
+			test.shotRight();
+			
 		}
 
 		//player2 movement + actions
