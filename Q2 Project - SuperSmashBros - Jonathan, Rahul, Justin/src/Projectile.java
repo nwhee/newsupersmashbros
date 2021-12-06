@@ -52,7 +52,7 @@ public class Projectile {
 	}
 	public static void moveLeft() {
 		speed = -10;
-		img = getImage("/imgs/spaceship-13.png");
+		img = getImage("/imgs/spaceship.gif");
 	}
 	
 //	public void fire() {
