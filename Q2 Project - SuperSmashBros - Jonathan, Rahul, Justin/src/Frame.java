@@ -81,14 +81,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Bertrand.moveRight();
 		}
 		
-		if (health1 == 0); //example code for when health reaches 0 reset both players health
+		if (health1 == 0 || health2 == 0); //example code for when health reaches 0 reset both players health
 		health1 = 100;
 		health2 = 100; 
-		
-		if (health2 == 0);
-		health1 = 100;
-		health2 = 100;
-		
+
 		
 		health1 = Albert.getHealth();
 		health2 = Bertrand.getHealth();
@@ -198,9 +194,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			
 		}*/
 		//function testing button - press q to test
-		//r to fire
-		if(arg0.getKeyCode() == 82) {
+		//c to fire
+		if(arg0.getKeyCode() == 67) {
 			Albert.fire();
+		}
+		// / to fire
+		if(arg0.getKeyCode() == 47) {
+			Bertrand.fire();
 		}
 
 		//player2 movement + actions
