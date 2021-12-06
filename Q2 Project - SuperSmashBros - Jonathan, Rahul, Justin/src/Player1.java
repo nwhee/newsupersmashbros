@@ -135,13 +135,15 @@ public class Player1 {
 		fallSpeed = jumpHeight * -.5;
 	}
 	public void fire() {
-		Projectile.setX(x + width);
-		Projectile.setY(y);
+		
 		if(facingRight) {
 			//Projectile.setVelocity(5);
-			Projectile.moveRight();
+			Projectile.setX(x + width);
+			Projectile.setY(y);Projectile.moveRight();
 		}else {
 			//Projectile.setVelocity(-5);
+			Projectile.setX(x - 3* width);
+			Projectile.setY(y);
 			Projectile.moveLeft();
 		}
 	}
