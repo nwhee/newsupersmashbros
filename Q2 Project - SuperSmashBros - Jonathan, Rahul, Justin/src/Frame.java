@@ -186,7 +186,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.setP1(true);
 			p1MoveRight = true;
 		}
-		if(arg0.getKeyCode() == 87 && p1JumpCounter > 0) {
+		//alt jump button: c
+		if(arg0.getKeyCode() == 87 || arg0.getKeyCode() == 67 && p1JumpCounter > 0) {
 			Albert.jump();
 			p1JumpCounter--;
 		}
@@ -194,14 +195,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			
 		}*/
 		//function testing button - press q to test
-		//c to fire
-		if(arg0.getKeyCode() == 67) {
+		//v to fire
+		if(arg0.getKeyCode() == 86) {
 			Albert.fire();
 		}
-		// / to fire
-		if(arg0.getKeyCode() == 47) {
-			Bertrand.fire();
-		}
+		
 
 		//player2 movement + actions
 		if(arg0.getKeyCode() == 37) {
@@ -212,9 +210,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Bertrand.setP1(false);
 			p2MoveRight = true;
 		}
-		if(arg0.getKeyCode() == 38 && p2JumpCounter > 0) {
+		// alt jump button: .
+		if(arg0.getKeyCode() == 38 || arg0.getKeyCode() == 67 && p2JumpCounter > 0) {
 			Bertrand.jump();
 			p2JumpCounter--;
+		}
+		// . to fire
+		if(arg0.getKeyCode() == 46) {
+			Bertrand.fire();
 		}
 
 	}
