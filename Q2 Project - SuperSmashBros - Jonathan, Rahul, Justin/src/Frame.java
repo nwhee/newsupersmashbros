@@ -211,7 +211,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			p2MoveRight = true;
 		}
 		// alt jump button: .
-		if(arg0.getKeyCode() == 38 && p1JumpCounter > 0 || arg0.getKeyCode() == 44 && p2JumpCounter > 0) {
+		if(arg0.getKeyCode() == 38 && p2JumpCounter > 0 || arg0.getKeyCode() == 44 && p2JumpCounter > 0) {
 			Bertrand.jump();
 			p2JumpCounter--;
 		}
