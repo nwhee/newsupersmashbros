@@ -180,7 +180,10 @@ public class Player1 {
 	public void setP1(boolean newP1) {
 		p1 = newP1;
 	}
-
+	
+	public void setResHealth(double resHealth) {
+		health = resHealth;
+	}
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
 		tx.scale(.5, .5);

@@ -19,6 +19,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//CREATE THE OBJECT (STEP 1)
 	Background[] backs;
 	
+	
+	//stocks in array form
+    Stocks1[] A = new Stocks1[3];
+	Stocks2[] B = new Stocks2[3];
+	
+	
 	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200,true, true);
@@ -54,6 +60,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Bertrand.paint(g);
 		specialA.paint(g);
 		
+		
+		//player1 Stocks
+		for(int i = 0; i < A.length; i++) {
+			A[i].paint(g);
+		}
+		
+		//player2 Stocks
+		for(int i = 0; i < B.length; i++) {
+			B[i].paint(g);
+		}
+		
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
@@ -81,13 +98,30 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Bertrand.moveRight();
 		}
 		
-		if (health1 == 0 || health2 == 0); //example code for when health reaches 0 reset both players health
-		health1 = 100;
-		health2 = 100; 
+		if (health1 == 0) { //Albert Status
+			
+		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		g.setFont(a);
+		g.setColor(Color.RED);
+		g.drawString("Betrand Wins", 300, 50);
+		Albert.setResHealth(100);
+		Bertrand.setResHealth(100);
+			
+		}
 
+		if (health2 == 0) {//Bertrand Status
+		Albert.setResHealth(100);
+		Bertrand.setResHealth(100);
+		Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		g.setFont(b);
+		g.setColor(Color.RED);
+		g.drawString("Albert Wins", 300, 50);
+		//B3.death();
+		//System.exit(0);
+		}
 		
 		health1 = Albert.getHealth();
-		health2 = Bertrand.getHealth();
+		health2 = Bertrand.getHealth();			
 		
 		Font c = new Font("Courier", Font.BOLD, 60);
 		g.setFont(c);
@@ -126,6 +160,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		backs[1] = bg1;
 		backs[2] = bg2;		
 		
+		Stocks1 A1 = new Stocks1(150,500);
+		Stocks1 A2 = new Stocks1(200,500);
+		Stocks1 A3 = new Stocks1(250,500);
+		
+		A[0] = A1;
+		A[1] = A2;
+		A[2] = A3;
+		
+		Stocks2 B1 = new Stocks2(550,500);
+		Stocks2 B2 = new Stocks2(600,500);
+		Stocks2 B3 = new Stocks2(650,500);
+		
+		B[0] = B1;
+		B[1] = B2;
+		B[2] = B3;
+		
 		JFrame f = new JFrame("super smash bros game");
 		f.setSize(new Dimension(965, 565));
 		f.setBackground(Color.blue);
@@ -139,6 +189,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 		
+		
+		//player1 Stocks
+		
+		for(int i = 0; i < A.length; i++) {
+			int y = 500;
+			int x = 150 + 50*i;
+			A[i] = new Stocks1(x , y);
+		}
+		
+		//player2 Stocks
+		for(int i = 0; i < B.length; i++) {
+			int y = 500;
+			int x = 550 + 50*i;
+			B[i] = new Stocks2(x, y);
+		}		
+	
 	}
 	
 	@Override
