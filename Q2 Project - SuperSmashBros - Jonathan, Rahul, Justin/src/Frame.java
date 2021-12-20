@@ -107,6 +107,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Albert.setResHealth(100);
 		Bertrand.setResHealth(100);
 			
+		Stocks1[] temp = new Stocks1[A.length-1];
+		
+			for(int i = 0; i < A.length - 1; i++) {
+				temp[i] = A[i];
+			}
+		
+			A = temp;
+			
+			if(A.length == 0) {
+				System.exit(0);
+			}	
 		}
 
 		if (health2 == 0) {//Bertrand Status
@@ -118,6 +129,20 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawString("Albert Wins", 300, 50);
 		//B3.death();
 		//System.exit(0);
+			
+		Stocks2[] temp = new Stocks2[B.length-1];
+		
+			for(int i = 0; i < B.length - 1; i++) {
+				temp[i] = B[i];
+			}
+		
+			B = temp;
+		
+		
+			if(B.length == 0) {
+			System.exit(0);
+			}
+		 
 		}
 		
 		health1 = Albert.getHealth();
