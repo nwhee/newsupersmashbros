@@ -14,7 +14,7 @@ public class Player1 {
 	private int height;
 	private int width;
 	private double regularDamage;
-	private double specialDamage;
+	private double specialDamage; //didn't end up using some of the extra attacks that were going to be there
 	private double ultimateDamage;
 	private double jumpHeight;
 	private double speed;
@@ -36,6 +36,7 @@ public class Player1 {
 	
 	
 	//constructors
+	//the default player - requires paramaters for where the player starts off, and has a boolean that sets which player they are
 	public Player1(int x, int y, boolean p1, boolean facingR) {
 		this.x = x;
 		this.y = y;
@@ -63,6 +64,7 @@ public class Player1 {
 		
 	}
 	
+	//changes sprite
 	public void changePicture(String newFileName) {
 		img = getImage(newFileName);
 		init(x, y);      //initialize location of the image
@@ -77,7 +79,9 @@ public class Player1 {
 		p1.drawImage(img, tx, null);
 	}
 	
+	//void update calculates physics
 	private void update() {
+		//gravity
 		y += fallSpeed;
 		fallSpeed += gravity;
 		
@@ -110,6 +114,7 @@ public class Player1 {
 		tx.scale(3, 3);
 	}
 	
+	//moves the player right, changes their sprite if they turn
 	public void moveRight() {
 		x += speed;
 		if(p1) {
@@ -134,6 +139,7 @@ public class Player1 {
 	public void jump() {
 		fallSpeed = jumpHeight * -.5;
 	}
+	//shoots projectile, by creting a projectile and just moving it in the direction that the player faces
 	public void fire() {
 		
 		if(facingRight) {
