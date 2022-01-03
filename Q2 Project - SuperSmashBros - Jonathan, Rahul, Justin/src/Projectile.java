@@ -17,7 +17,7 @@ public class Projectile {
 	public Projectile(int x, int y) {
 		this.x = x;
 		this.y = y;
-		img = getImage("/imgs/spaceship.gif"); //load the image for Tree
+		img = getImage("/imgs/spaceship-13.png"); //load the image for Tree
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
@@ -53,7 +53,7 @@ public class Projectile {
 	}
 	public static void moveLeft() {
 		speed = -10;
-		img = getImage("/imgs/spaceship.gif");
+		img = getImage("/imgs/spaceship-13.png");
 	}
 	
 //	public void fire() {

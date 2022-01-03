@@ -26,14 +26,21 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//CREATE THE OBJECT (STEP 1)
 	Background[] backs;
 	
+	
+	//stocks in array form
+    Stocks1[] A = new Stocks1[3];
+	Stocks2[] B = new Stocks2[3];
+	
+	
 	Stage platform = new Stage(100, 230);
 	
 	Player1 Albert = new Player1(200,200,true, true);
 	Player1 Bertrand = new Player1(750,200,false, false);
 	
 	Projectile specialA = new Projectile(1000, 1000);
-	Projectile specialB = new Projectile(1000, 1000);
 	//MoveLeft and MoveRight are used in order to change the sprite between facing left and facing right
+	Projectile specialB = new Projectile(100, 200);
+
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
@@ -63,6 +70,18 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Bertrand.paint(g);
 		specialA.paint(g);
 		//gives you two jumps if you're on the ground
+		specialB.paint(g);
+		
+		//player1 Stocks
+		for(int i = 0; i < A.length; i++) {
+			A[i].paint(g);
+		}
+		
+		//player2 Stocks
+		for(int i = 0; i < B.length; i++) {
+			B[i].paint(g);
+		}
+
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
@@ -90,14 +109,61 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Bertrand.moveRight();
 		}
 		
+
 		//what happens if one player loses
 		if (health1 == 0 || health2 == 0); //example code for when health reaches 0 reset both players health
 		health1 = 100;
 		health2 = 100; 
 
+		if (health1 == 0) { //Albert Status
+			
+		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		g.setFont(a);
+		g.setColor(Color.RED);
+		g.drawString("Betrand Wins", 300, 50);
+		Albert.setResHealth(100);
+		Bertrand.setResHealth(100);
+			
+		Stocks1[] temp = new Stocks1[A.length-1];
+		
+			for(int i = 0; i < A.length - 1; i++) {
+				temp[i] = A[i];
+			}
+		
+			A = temp;
+			
+			if(A.length == 0) {
+				System.exit(0);
+			}	
+		}
+
+		if (health2 == 0) {//Bertrand Status
+		Albert.setResHealth(100);
+		Bertrand.setResHealth(100);
+		Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		g.setFont(b);
+		g.setColor(Color.RED);
+		g.drawString("Albert Wins", 300, 50);
+		//B3.death();
+		//System.exit(0);
+			
+		Stocks2[] temp = new Stocks2[B.length-1];
+		
+			for(int i = 0; i < B.length - 1; i++) {
+				temp[i] = B[i];
+			}
+		
+			B = temp;
+		
+		
+			if(B.length == 0) {
+			System.exit(0);
+			}
+		 
+		}
 		
 		health1 = Albert.getHealth();
-		health2 = Bertrand.getHealth();
+		health2 = Bertrand.getHealth();			
 		
 		//GUI - shows health for each player
 		Font c = new Font("Courier", Font.BOLD, 60);
@@ -135,19 +201,37 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public Frame() {
 		//the three different backgrounds that it randomly selects from
 		backs = new Background[3]; //creating an array for the 3 backgrounds
-		Background bg0 = new Background(0,0, "/imgs/skyBG.png");  //daytime 
+		Background bg0 = new Background(0,0, "/imgs/965x565 skyBG.png");  //daytime 
 		
-		Background bg1 = new Background(0,0, "/imgs/skynightBG.png"); //noon    
+		Background bg1 = new Background(0,0, "/imgs/965x565 skynightBG.png"); //noon    
 		
-		Background bg2 = new Background(0,0, "/imgs/skynoonBG.jpg");  //night
+		Background bg2 = new Background(0,0, "/imgs/965x565 skynoonBG.png");  //night
 		
 		backs[0] = bg0;
 		backs[1] = bg1;
 		backs[2] = bg2;		
 		
+
 		// the actual window that the game is open in
+
+		Stocks1 A1 = new Stocks1(150,500);
+		Stocks1 A2 = new Stocks1(200,500);
+		Stocks1 A3 = new Stocks1(250,500);
+		
+		A[0] = A1;
+		A[1] = A2;
+		A[2] = A3;
+		
+		Stocks2 B1 = new Stocks2(550,500);
+		Stocks2 B2 = new Stocks2(600,500);
+		Stocks2 B3 = new Stocks2(650,500);
+		
+		B[0] = B1;
+		B[1] = B2;
+		B[2] = B3;
+
 		JFrame f = new JFrame("super smash bros game");
-		f.setSize(new Dimension(965, 565));
+		f.setSize(new Dimension(965, 800));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.setResizable(false);
@@ -159,6 +243,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
 		
+		
+		//player1 Stocks
+		
+		for(int i = 0; i < A.length; i++) {
+			int y = 500;
+			int x = 150 + 50*i;
+			A[i] = new Stocks1(x , y);
+		}
+		
+		//player2 Stocks
+		for(int i = 0; i < B.length; i++) {
+			int y = 500;
+			int x = 550 + 50*i;
+			B[i] = new Stocks2(x, y);
+		}		
+	
 	}
 	
 	@Override
