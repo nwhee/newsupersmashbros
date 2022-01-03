@@ -16,6 +16,13 @@ import javax.swing.Timer;
 
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
+	
+	/*
+	Player one: wasd to move, w to jump, v to shoot projectile
+	Player two: arrow keys to move, up arrow to jump, . to shoot projectile
+	projectile does 10% to the opponent
+	*/
+	
 	//CREATE THE OBJECT (STEP 1)
 	Background[] backs;
 	
@@ -213,6 +220,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 
 		//player2 movement + actions
+		//for moving the player left and right - sets a boolean to true or false and in the player script, the method runs based on the boolean
+		//this is used in order to be able to jump or attack while running
 		if(arg0.getKeyCode() == 37) {
 			Bertrand.setP1(false);
 			p2MoveLeft = true;
@@ -234,6 +243,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 //test
 	@Override
+	
+	
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		if(arg0.getKeyCode() == 65) {
