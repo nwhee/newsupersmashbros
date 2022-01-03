@@ -9,7 +9,8 @@ public class Stage {
 	
 	private Image img; 	
 	private AffineTransform tx;
-
+	
+	//constructor, requires the x and y position of it, creates the sprite at that position
 	public Stage(int x, int y) {
 		img = getImage("/imgs/longerStage.png"); //load the image for Tree
 		tx = AffineTransform.getTranslateInstance(x, y );

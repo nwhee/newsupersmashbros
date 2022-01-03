@@ -13,6 +13,7 @@ public class Background{
 	private Image img; 	
 	private AffineTransform tx;
 
+	//requires integers for the position of the background, and a string for what the file is called because there are multiple backgrounds
 	public Background(int x, int y, String fn) {
 		img = getImage(fn); //load the image for Tree
 		tx = AffineTransform.getTranslateInstance(x, y );

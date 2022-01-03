@@ -46,6 +46,7 @@ public class Projectile {
 		
 	}
 	
+	//methods for moving the projectile right or left, gives it the proper sprite 
 	public static void moveRight() {
 		speed = 10;
 		img = getImage("/imgs/spaceshipflipped-13.png");
@@ -60,6 +61,7 @@ public class Projectile {
 //		speed = 5;
 //	}
 	
+	//removes the projectile from the frame by setting the position to really far off screen and making it so it can't move
 	public void reset() {
 		x = 10000;
 		y = 10000;
