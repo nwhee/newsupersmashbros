@@ -31,6 +31,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Player1 Bertrand = new Player1(750,200,false, false);
 	
 	Projectile specialA = new Projectile(1000, 1000);
+	Projectile specialB = new Projectile(100, 200);
 	
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
@@ -59,7 +60,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Albert.paint(g);
 		Bertrand.paint(g);
 		specialA.paint(g);
-		
+		specialB.paint(g);
 		
 		//player1 Stocks
 		for(int i = 0; i < A.length; i++) {
@@ -158,10 +159,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Rectangle Bertrand1 = new Rectangle(Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
 		
 		Rectangle special1 = new Rectangle(specialA.getX(), specialA.getY(), specialA.getWidth(), specialA.getHeight());
+		Rectangle special2 = new Rectangle(specialB.getX(), specialB.getY(), specialB.getWidth(), specialB.getHeight());
 		
 		if(special1.intersects(Bertrand1)) {
 			Bertrand.setHealth(10);
 			specialA.reset();
+		}
+		if(special2.intersects(Albert1)) {
+			Albert.setHealth(10);
+			specialB.reset();
 		}
 	}	
 	
