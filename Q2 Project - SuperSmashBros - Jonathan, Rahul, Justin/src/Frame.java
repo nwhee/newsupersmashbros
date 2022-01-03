@@ -175,11 +175,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	public Frame() {
 		backs = new Background[3]; //creating an array for the 3 backgrounds
-		Background bg0 = new Background(0,0, "/imgs/skyBG.png");  //daytime 
+		Background bg0 = new Background(0,0, "/imgs/965x565 skyBG.png");  //daytime 
 		
-		Background bg1 = new Background(0,0, "/imgs/skynightBG.png"); //noon    
+		Background bg1 = new Background(0,0, "/imgs/965x565 skynightBG.png"); //noon    
 		
-		Background bg2 = new Background(0,0, "/imgs/skynoonBG.jpg");  //night
+		Background bg2 = new Background(0,0, "/imgs/965x565 skynoonBG.png");  //night
 		
 		backs[0] = bg0;
 		backs[1] = bg1;
@@ -202,7 +202,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		B[2] = B3;
 		
 		JFrame f = new JFrame("super smash bros game");
-		f.setSize(new Dimension(965, 565));
+		f.setSize(new Dimension(965, 800));
 		f.setBackground(Color.blue);
 		f.add(this);
 		f.setResizable(false);
