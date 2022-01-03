@@ -5,6 +5,11 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 
+
+//same as player one - used so two people could work on things for the player script without any conflicts in the code
+
+
+
 public class Player2 {
 	
 	//instance variables
