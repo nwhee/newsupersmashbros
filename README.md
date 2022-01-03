@@ -1,3 +1,3 @@
 # newsupersmashbros
 
-This game is based off of **Super Smash Bros**.
+This game is based off of *Super Smash Bros*.
