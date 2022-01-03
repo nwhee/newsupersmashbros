@@ -25,7 +25,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Player1 Bertrand = new Player1(750,200,false, false);
 	
 	Projectile specialA = new Projectile(1000, 1000);
-	
+	Projectile specialB = new Projectile(1000, 1000);
+	//MoveLeft and MoveRight are used in order to change the sprite between facing left and facing right
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
@@ -38,12 +39,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	private double health2 = 100;
 	
+	//randomizes which background is shown
 	private int bg = (int)(Math.random()*3);
 
 
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		
+		//paints the sprites
 		backs[bg].paint(g);
 		
 		//stage object
@@ -53,7 +55,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Albert.paint(g);
 		Bertrand.paint(g);
 		specialA.paint(g);
-		
+		//gives you two jumps if you're on the ground
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
@@ -81,6 +83,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Bertrand.moveRight();
 		}
 		
+		//what happens if one player loses
 		if (health1 == 0 || health2 == 0); //example code for when health reaches 0 reset both players health
 		health1 = 100;
 		health2 = 100; 
@@ -89,20 +92,28 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		health1 = Albert.getHealth();
 		health2 = Bertrand.getHealth();
 		
+		//GUI - shows health for each player
 		Font c = new Font("Courier", Font.BOLD, 60);
 		g.setFont(c);
 		g.setColor(Color.BLACK);
 		g.drawString(health1+"%", 175, 500);
 		g.drawString(health2+"%", 575, 500);
 		
+		//hitboxes
 		Rectangle Albert1 = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
 		Rectangle Bertrand1 = new Rectangle(Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
 		
 		Rectangle special1 = new Rectangle(specialA.getX(), specialA.getY(), specialA.getWidth(), specialA.getHeight());
+		Rectangle special2 = new Rectangle(specialB.getX(), specialB.getY(), specialB.getWidth(), specialB.getHeight());
 		
+		//lowers the health of the player if they get hit
 		if(special1.intersects(Bertrand1)) {
 			Bertrand.setHealth(10);
 			specialA.reset();
+		}
+		if(special2.intersects(Albert1)) {
+			Albert.setHealth(10);
+			specialB.reset();
 		}
 	}	
 	
@@ -115,6 +126,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	
 	public Frame() {
+		//the three different backgrounds that it randomly selects from
 		backs = new Background[3]; //creating an array for the 3 backgrounds
 		Background bg0 = new Background(0,0, "/imgs/skyBG.png");  //daytime 
 		
@@ -126,6 +138,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		backs[1] = bg1;
 		backs[2] = bg2;		
 		
+		// the actual window that the game is open in
 		JFrame f = new JFrame("super smash bros game");
 		f.setSize(new Dimension(965, 565));
 		f.setBackground(Color.blue);
@@ -174,6 +187,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 
 	@Override
+	//what happens if you press a key
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 			System.out.println(arg0.getKeyCode());
@@ -191,10 +205,6 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Albert.jump();
 			p1JumpCounter--;
 		}
-		/*if(arg0.getKeyCode() == 67) {
-			
-		}*/
-		//function testing button - press q to test
 		//v to fire
 		if(arg0.getKeyCode() == 86) {
 			Albert.fire();
