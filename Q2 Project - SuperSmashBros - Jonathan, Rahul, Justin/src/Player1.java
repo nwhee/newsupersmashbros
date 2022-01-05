@@ -153,6 +153,18 @@ public class Player1 {
 			Projectile.moveLeft();
 		}
 	}
+	
+	public void fire2() {
+		if(facingRight) {
+			Fireball.setX(x + width);
+			Fireball.setY(y);
+			Fireball.moveRight();
+		}else {
+			Fireball.setX(x - 3* width);
+			Fireball.setY(y);
+			Fireball.moveLeft();
+		}
+	}
 
 	
 	//getters

@@ -7,10 +7,12 @@ import java.net.URL;
 
 public class Fireball {
 	
-	private int x, y;
-	private int speed;
+	private static int x;
+	private static int y;
+	private static int speed;
+	private int ow = 65, oh = 65; 
 	
-	private Image img;
+	private static Image img;
 	private AffineTransform tx;
 	
 	private boolean moveLeft = false;
@@ -51,26 +53,65 @@ public class Fireball {
 	}
 	
 	
-	public void shotLeft() {
-		moveLeft = true;
-		if(x > -30 && x < 800) {
-			moveLeft = true;
-			x -= speed;
-		}
-		else {
-			moveLeft = false;
-		}
-
+//	public void shotLeft() {
+//		moveLeft = true;
+//		if(x > -30 && x < 800) {
+//			moveLeft = true;
+//			x -= speed;
+//		}
+//		else {
+//			moveLeft = false;
+//		}
+//
+//	}
+//	public void shotRight() {
+//		moveRight = true;
+//		if(x > -30 && x < 800) {
+//			x += speed;
+//		}
+//		else {
+//			moveRight = false;
+//		}
+//
+//	}
+	
+	//methods for movement
+	public static void moveRight() {
+		speed = 10;
+		img = getImage("/imgs/Fireball.jpg");
 	}
-	public void shotRight() {
-		moveRight = true;
-		if(x > -30 && x < 800) {
-			x += speed;
-		}
-		else {
-			moveRight = false;
-		}
-
+	public static void moveLeft() {
+		speed = -10;
+		img = getImage("/imgs/Fireball-flipped.jpg");
+	}
+	
+	public void reset() {
+		x = 10000;
+		y = 10000;
+		speed = 0;
+	}
+	
+	//getters
+	
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
+	}
+	public int getWidth() {
+		return ow;
+	}
+	public int getHeight() {
+		return oh;
+	}
+	
+	//setters
+	public static void setX(int paramX) {
+		x = paramX;
+	}
+	public static void setY(int paramY) {
+		y = paramY;
 	}
 	
 	
@@ -79,7 +120,7 @@ public class Fireball {
 		tx.scale(.5, .5);
 	}
 	
-	private Image getImage(String path) {
+	private static Image getImage(String path) {
 		Image tempImage = null;
 		try {
 			URL imageURL = Player1.class.getResource(path);
