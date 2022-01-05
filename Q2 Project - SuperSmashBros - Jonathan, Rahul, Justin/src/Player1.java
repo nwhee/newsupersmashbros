@@ -170,11 +170,13 @@ public class Player1 {
 	public void resPos() {  //Albert
 		x = 200;
 		y = 100;
+		fallSpeed = 0;
 	}
 	
 	public void resPos2() { //Bertrand
 		x = 750;
 		y = 100;
+		fallSpeed = 0;
 	}
 	
 	//getters
