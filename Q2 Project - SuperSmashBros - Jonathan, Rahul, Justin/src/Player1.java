@@ -165,7 +165,17 @@ public class Player1 {
 			Fireball.moveLeft();
 		}
 	}
-
+	
+	//resetting the position of the player used for out of bounds hitbox
+	public void resPos() {  //Albert
+		x = 200;
+		y = 100;
+	}
+	
+	public void resPos2() { //Bertrand
+		x = 750;
+		y = 100;
+	}
 	
 	//getters
 	public double getHealth() {
@@ -199,7 +209,8 @@ public class Player1 {
 		p1 = newP1;
 	}
 	
-	public void setResHealth(double resHealth) {
+	
+	public void setResHealth(double resHealth) { //reset player health
 		health = resHealth;
 	}
 	private void init(double a, double b) {
