@@ -31,9 +31,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
     Stocks1[] A = new Stocks1[3];
 	Stocks2[] B = new Stocks2[3];
 	
-	
+	//stage
 	Stage platform = new Stage(100, 230);
-	
+	//players
 	Player1 Albert = new Player1(200,200,true, true);
 	Player1 Bertrand = new Player1(750,200,false, false);
 	
@@ -41,6 +41,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//MoveLeft and MoveRight are used in order to change the sprite between facing left and facing right
 	Projectile specialB = new Projectile(100, 200);
 
+	//variables for the player - how many jumps they've used up, if they're facing left or right
 	private int p1JumpCounter = 2;
 	private boolean p1MoveLeft = false;
 	private boolean p1MoveRight = false;
@@ -49,6 +50,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	private boolean p2MoveLeft = false;
 	private boolean p2MoveRight = false;
 	
+	//health
 	private double health1 = 100;
 	
 	private double health2 = 100;
@@ -82,12 +84,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			B[i].paint(g);
 		}
 
+		//resets jump counter if you get onto the stage
 		if(Albert.getY() == 250 && Albert.onStage) {
 			p1JumpCounter = 2;
 		}
 		else {
 			Albert.onStage = false ;
 		}
+		//player movement
 		if(p1MoveLeft) {
 			Albert.moveLeft();
 		}
