@@ -39,7 +39,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	Projectile specialA = new Projectile(1000, 1000);
 	//MoveLeft and MoveRight are used in order to change the sprite between facing left and facing right
-	Projectile specialB = new Projectile(100, 200);
+	Fireball specialB = new Fireball(1000, 200);
 
 	//variables for the player - how many jumps they've used up, if they're facing left or right
 	private int p1JumpCounter = 2;
@@ -341,7 +341,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		// . to fire
 		if(arg0.getKeyCode() == 46) {
-			Bertrand.fire();
+			Bertrand.fire2();
 		}
 
 	}
