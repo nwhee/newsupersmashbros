@@ -7,6 +7,10 @@ import java.net.URL;
 
 public class Stocks1 {
 	
+	//the player has 3 stocks, meaning that they're able to die three times  before they finally lose
+	//this script is for player 1
+	
+	
 	//instance variables
 	private int x, y;
 	private int isDead;
@@ -28,6 +32,7 @@ public class Stocks1 {
 		init(x, y);
 	}
 	
+	//getters
 	public int getX() {
 		return x;
 	}
@@ -35,6 +40,7 @@ public class Stocks1 {
 		return y;
 	}
 	
+	//changes the sprite
 	public void changePicture(String newFileName) {
 		img = getImage(newFileName);
 		init(x, y);      //initialize location of the image
@@ -49,11 +55,13 @@ public class Stocks1 {
 		p1.drawImage(img, tx, null);
 	}
 	
+	//teleports the stock off screen to get rid of it
 	public void death() {
 		x = 10000;
 		y = 10000;
 	}
 	
+	//whether or not the player is dead or not
 	public void stockDeath() {
 		isDead = 100;
 	}
