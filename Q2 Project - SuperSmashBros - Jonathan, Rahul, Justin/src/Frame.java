@@ -112,7 +112,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(p2MoveRight) {
 			Bertrand.moveRight();
 		}
-		//if  player 1 dies, then it removes one life from them
+
 		if (health1 == 0) { //Albert Status
 			
 		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
@@ -121,7 +121,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawString("Betrand Wins", 300, 50);
 		Albert.setResHealth(100);
 		Bertrand.setResHealth(100);
-			
+		
+		//Lowers the number of "lives" by one each time health reaches 0
 		Stocks1[] temp = new Stocks1[A.length-1];
 		
 			for(int i = 0; i < A.length - 1; i++) {
@@ -188,6 +189,50 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(special2.intersects(Albert1)) {
 			Albert.setHealth(10);
 			specialB.reset();
+		}
+		
+		//creating the rectangle hitbox for Albert and one for out of bounds
+		Rectangle AlbertBound = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
+		Rectangle StageBound = new Rectangle(1, 800, 10000, 500);
+		
+		//detects if Albert is hitting out of bounds
+		if(AlbertBound.intersects(StageBound)) {
+			Albert.resPos();
+			
+			//Lowers the number of "lives" by one each time player goes out of bounds
+			Stocks1[] temp = new Stocks1[A.length-1];
+			
+			for(int i = 0; i < A.length - 1; i++) {
+			temp[i] = A[i];
+			}
+	
+			A = temp;
+		
+			if(A.length == 0) {
+			System.exit(0);
+			}	
+		}
+		
+		//create another rectangle hitbox for Bertrand
+		Rectangle BertrandBound = new Rectangle (Bertrand.getX(), Bertrand.getY(), Bertrand.getWidth(), Bertrand.getHeight());
+		
+		//detects if Bertrand is hitting out of bounds
+		if(BertrandBound.intersects(StageBound)) {
+			Bertrand.resPos2();
+			
+			Stocks2[] temp = new Stocks2[B.length-1];
+			
+			for(int i = 0; i < B.length - 1; i++) {
+			temp[i] = B[i];
+			}
+	
+			B = temp;
+	
+	
+			if(B.length == 0) {
+				System.exit(0);
+				
+			}
 		}
 	}	
 	
