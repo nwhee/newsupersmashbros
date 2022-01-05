@@ -112,13 +112,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		if(p2MoveRight) {
 			Bertrand.moveRight();
 		}
-		
-
-		//what happens if one player loses
-		if (health1 == 0 || health2 == 0); //example code for when health reaches 0 reset both players health
-		health1 = 100;
-		health2 = 100; 
-
+		//if  player 1 dies, then it removes one life from them
 		if (health1 == 0) { //Albert Status
 			
 		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
@@ -141,6 +135,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}	
 		}
 
+		//removes one life from player 2 if they die
 		if (health2 == 0) {//Bertrand Status
 		Albert.setResHealth(100);
 		Bertrand.setResHealth(100);
@@ -151,6 +146,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//B3.death();
 		//System.exit(0);
 			
+		
+		//removes a stock from the array
 		Stocks2[] temp = new Stocks2[B.length-1];
 		
 			for(int i = 0; i < B.length - 1; i++) {
@@ -215,9 +212,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		backs[1] = bg1;
 		backs[2] = bg2;		
 		
-
-		// the actual window that the game is open in
-
+		//the player lives, with images to show each life
 		Stocks1 A1 = new Stocks1(150,500);
 		Stocks1 A2 = new Stocks1(200,500);
 		Stocks1 A3 = new Stocks1(250,500);
@@ -234,6 +229,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		B[1] = B2;
 		B[2] = B3;
 
+		// the actual window that the game is open in
 		JFrame f = new JFrame("super smash bros game");
 		f.setSize(new Dimension(965, 800));
 		f.setBackground(Color.blue);
