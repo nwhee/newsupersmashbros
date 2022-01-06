@@ -116,7 +116,7 @@ public class Player1 {
 	
 	//moves the player right, changes their sprite if they turn
 	public void moveRight() {
-		if(x > 0 && x < 919) {
+		if(x > 0 && x < 919) { 
 			x += speed;	
 		}
 		if(p1) {
