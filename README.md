@@ -25,6 +25,16 @@ The Background class includes an array of images.
 - ← : Move Left
 - → : Move Right
 - ↑ : Jump
-- . : Fire Projectile
+- . : Fire Projectile![148461396-1e6e29fe-0e39-42a8-994b-c4f1cec50bb1](https://user-images.githubusercontent.com/85975474/148461499-873d969c-4b8e-4859-be33-e02d81a4d45b.png)
 
 
+
+### Sprites
+
+![image](https://user-images.githubusercontent.com/85975474/148461032-28b7b3d9-8d61-4f23-b660-5ea8c29606f2.png)
+
+![image](https://user-images.githubusercontent.com/85975474/148461270-f5cb2b5b-9b21-48dd-a2fa-4db5a1f08e3f.png)
+
+![image](https://user-images.githubusercontent.com/85975474/148461396-1e6e29fe-0e39-42a8-994b-c4f1cec50bb1.png)
+
+![image](https://user-images.githubusercontent.com/85975474/148461423-788bf628-dd4e-45e4-9244-4f52b16a80c1.png)
