@@ -78,11 +78,11 @@ public class Fireball {
 	//methods for movement
 	public static void moveRight() {
 		speed = 10;
-		img = getImage("/imgs/Fireball.jpg");
+		img = getImage("/imgs/FireballCropRight.png");
 	}
 	public static void moveLeft() {
 		speed = -10;
-		img = getImage("/imgs/Fireball-flipped.jpg");
+		img = getImage("/imgs/FireballCrop.png");
 	}
 	
 	public void reset() {
