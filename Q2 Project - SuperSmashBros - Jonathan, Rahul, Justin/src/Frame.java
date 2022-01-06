@@ -34,8 +34,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//stage
 	Stage platform = new Stage(100, 230);
 	//players
-	Player1 Albert = new Player1(200,200,true, true);
-	Player1 Bertrand = new Player1(750,200,false, false);
+	Player1 Albert = new Player1(200,230,true, true);
+	Player1 Bertrand = new Player1(750,230,false, false);
 	
 	Projectile specialA = new Projectile(1000, 1000);
 	//MoveLeft and MoveRight are used in order to change the sprite between facing left and facing right
