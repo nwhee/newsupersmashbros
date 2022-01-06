@@ -11,14 +11,18 @@ The Background class includes an array of images.
 
 ### **Controls**
 
-#### - Player 1
+##### - Player 1
+/Q2 Project - SuperSmashBros - Jonathan, Rahul, Justin/src/imgs/player1.png
 - A: Move Left
 - D: Move Right
 - W: Jump
 - V: Fire Projectile
 
-#### - Player 2
+##### - Player 2
+/Q2 Project - SuperSmashBros - Jonathan, Rahul, Justin/src/imgs/player2Right.png
 - ← : Move Left
 - → : Move Right
 - ↑ : Jump
 - . : Fire Projectile
+
+
