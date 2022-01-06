@@ -9,4 +9,10 @@ The Background class includes an array of images.
 ### **Stage**
 
 
-### **Movement**
+### **Controls**
+
+#### Player 1
+
+
+
+#### Player 2
