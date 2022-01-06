@@ -11,8 +11,8 @@ The Background class includes an array of images.
 
 ### **Controls**
 
-#### Player 1
+####     Player 1
 
 
 
-#### Player 2
+####     Player 2
