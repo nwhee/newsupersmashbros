@@ -39,3 +39,9 @@ The Background class includes an array of images.
 ![image](https://user-images.githubusercontent.com/85975474/148461396-1e6e29fe-0e39-42a8-994b-c4f1cec50bb1.png)
 
 ![image](https://user-images.githubusercontent.com/85975474/148461423-788bf628-dd4e-45e4-9244-4f52b16a80c1.png)
+
+
+### Contributors
+- [Johnathan](https://github.com/nwhee)
+- [Rahul](https://github.com/RJ-06)
+- [Justin](https://github.com/JustinVFong)
