@@ -7,6 +7,7 @@ A random background is picked each time the game launches. There are three diffe
 The Background class includes an array of images. 
 
 ### **Stage**
+![image](https://user-images.githubusercontent.com/85975474/148461684-08df4dab-774b-4cc5-8cfa-67ec936d82bd.png)
 
 
 ### **Controls**
@@ -25,7 +26,7 @@ The Background class includes an array of images.
 - ← : Move Left
 - → : Move Right
 - ↑ : Jump
-- . : Fire Projectile![148461396-1e6e29fe-0e39-42a8-994b-c4f1cec50bb1](https://user-images.githubusercontent.com/85975474/148461499-873d969c-4b8e-4859-be33-e02d81a4d45b.png)
+- . : Fire Projectile
 
 
 
