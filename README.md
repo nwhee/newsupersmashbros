@@ -11,8 +11,14 @@ The Background class includes an array of images.
 
 ### **Controls**
 
-####     Player 1
+#### _ Player 1
+A: Move Left
+D: Move Right
+W: Jump
+V: Fire Projectile
 
-
-
-####     Player 2
+#### _ Player 2
+← : Move Left
+→ : Move Right
+↑ : Jump
+. : Fire Projectile
