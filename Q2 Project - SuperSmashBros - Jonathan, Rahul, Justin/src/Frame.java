@@ -184,8 +184,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font c = new Font("Courier", Font.BOLD, 60);
 		g.setFont(c);
 		g.setColor(Color.BLACK);
-		g.drawString(health1+"%", 175, 500);
-		g.drawString(health2+"%", 575, 500);
+		g.drawString( health1+"%", 175, 500);
+		g.drawString( health2+"%", 575, 500);
+		Font e = new Font("Courier", Font.BOLD, 40);
+		g.setFont(e);
+		g.drawString("Albert", 190, 430 );
+		g.drawString("Bertrand", 580, 430 );
 		
 		//hitboxes
 		Rectangle Albert1 = new Rectangle(Albert.getX(), Albert.getY(), Albert.getWidth(), Albert.getHeight());
