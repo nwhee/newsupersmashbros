@@ -39,6 +39,10 @@ The Background class includes an array of images.
 ![image](https://user-images.githubusercontent.com/85975474/148617804-d70f5a4b-73f8-4c73-a1c4-1a7d1289bb3b.png)
 
 
+Boundary Demonstration
+
+![image](https://github.com/nwhee/newsupersmashbros/blob/master/assets/falling.gif)
+
 ### **The Players**
 The constructor for the players
 
@@ -87,12 +91,18 @@ Method to remove a life
 
 ![image](https://user-images.githubusercontent.com/85975474/148618774-5e688b85-7d0c-438b-a0bb-048e0f318f89.png)
 
+![image](https://github.com/nwhee/newsupersmashbros/blob/master/assets/lose-stock.gif)
+
 
 ### **Projectile**
 
 Creates the constructor for the Projectile 
 
 ![image](https://user-images.githubusercontent.com/85975474/148618583-85306b45-9b7f-4566-b202-f5e8124169b8.png)
+
+Attack Demonstration
+
+![image](https://github.com/nwhee/newsupersmashbros/blob/master/assets/attack.gif)
 
 
 The behaviour methods of the Projectile
@@ -110,6 +120,11 @@ Create the Projectile Object
 
 ### **Controls**
 These portions of code are binding the keys for movement and actions of each player
+
+
+Player Movement Demonstration
+
+![image](https://github.com/nwhee/newsupersmashbros/blob/master/assets/movement.gif)
 
 ##### - Player 1 ![image](https://user-images.githubusercontent.com/85975474/148459949-a0063a84-eed5-437b-86e5-0a0a43202115.png)
 
