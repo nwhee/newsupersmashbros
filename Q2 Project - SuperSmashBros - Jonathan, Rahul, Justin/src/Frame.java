@@ -178,7 +178,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			Font b = new Font("Courier", Font.BOLD, 60);
 			g.setFont(b);
 			g.setColor(Color.RED);
-			g.drawString("Bertrand Wins", 300, 50);
+			g.drawString("Albert Wins", 300, 50);
 		}
 		
 		health1 = Albert.getHealth();
