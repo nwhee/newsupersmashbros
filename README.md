@@ -30,12 +30,15 @@ The Background class includes an array of images.
 
 
 
-### Sprites
+##### Classes
 
+### projectiles - fireball and rocket
 ![image](https://user-images.githubusercontent.com/85975474/148461032-28b7b3d9-8d61-4f23-b660-5ea8c29606f2.png)
 
 ![image](https://user-images.githubusercontent.com/85975474/148461270-f5cb2b5b-9b21-48dd-a2fa-4db5a1f08e3f.png)
 
+
+### Stocks (Lives)
 ![image](https://user-images.githubusercontent.com/85975474/148461396-1e6e29fe-0e39-42a8-994b-c4f1cec50bb1.png)
 
 ![image](https://user-images.githubusercontent.com/85975474/148461423-788bf628-dd4e-45e4-9244-4f52b16a80c1.png)
