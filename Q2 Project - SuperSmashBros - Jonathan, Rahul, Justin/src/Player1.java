@@ -175,12 +175,14 @@ public class Player1 {
 		x = 200;
 		y = 200;
 		fallSpeed = 0;
+		health = 100;
 	}
 	
 	public void resPos2() { //Bertrand
 		x = 750;
 		y = 200;
 		fallSpeed = 0;
+		health = 100;
 	}
 	
 	//getters
