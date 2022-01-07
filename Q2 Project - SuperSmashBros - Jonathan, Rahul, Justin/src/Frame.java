@@ -118,7 +118,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
 		g.setFont(a);
 		g.setColor(Color.RED);
-		g.drawString("Betrand Wins", 300, 50);
+		//g.drawString("Betrand Wins", 300, 50);
 		Albert.setResHealth(100);
 		Bertrand.setResHealth(100);
 		
@@ -130,10 +130,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 		
 			A = temp;
-			
-			if(A.length == 0) {
-				System.exit(0);
-			}	
+		
 		}
 
 		//removes one life from player 2 if they die
@@ -143,7 +140,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
 		g.setFont(b);
 		g.setColor(Color.RED);
-		g.drawString("Albert Wins", 300, 50);
+		//g.drawString("Albert Wins", 300, 50);
 		//B3.death();
 		//System.exit(0);
 			
@@ -157,11 +154,27 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 			B = temp;
 		
-		
-			if(B.length == 0) {
-			System.exit(0);
-			}
 		 
+		}
+		
+		if(A.length == 0) {
+			//System.exit(0);
+			Albert.setResHealth(100);
+			Bertrand.setResHealth(100);
+			Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+			g.setFont(b);
+			g.setColor(Color.RED);
+			g.drawString("Bertrand Wins", 300, 50);
+		}	
+		
+		if(B.length == 0) {
+			//System.exit(0);
+			Albert.setResHealth(100);
+			Bertrand.setResHealth(100);
+			Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+			g.setFont(b);
+			g.setColor(Color.RED);
+			g.drawString("Bertrand Wins", 300, 50);
 		}
 		
 		health1 = Albert.getHealth();
@@ -209,7 +222,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			A = temp;
 		
 			if(A.length == 0) {
-			System.exit(0);
+			//System.exit(0);
+				g.drawString("Bertrand Wins", 300, 50);
 			}	
 		}
 		
@@ -230,7 +244,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	
 			if(B.length == 0) {
-				System.exit(0);
+				//System.exit(0);
+			g.drawString("Albert Wins", 300, 50);
 				
 			}
 		}
