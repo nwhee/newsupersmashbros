@@ -46,6 +46,6 @@ Code Walkthrough
 https://drive.google.com/file/d/1NpXlch0TNNQHqcH43V-z4Iaq_0ayNDl7/view?usp=sharing
 
 ### Contributors
-- [Johnathan](https://github.com/nwhee)
+- [Jonathan](https://github.com/nwhee)
 - [Rahul](https://github.com/RJ-06)
 - [Justin](https://github.com/JustinVFong)
