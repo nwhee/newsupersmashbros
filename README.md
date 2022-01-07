@@ -94,6 +94,10 @@ Getters and Setters of the Projectile
 
 ![image](https://user-images.githubusercontent.com/85975474/148618605-618ef2c0-5a8c-4606-a4bb-2dd7584d5436.png)
 
+Create the Projectile Object
+
+![image](https://user-images.githubusercontent.com/85975474/148618637-29535ad3-bc85-40e0-b08f-bc8678e01d3e.png)
+
 
 ### **Controls**
 These portions of code are binding the keys for movement and actions of each player
