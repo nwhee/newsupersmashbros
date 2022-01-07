@@ -79,6 +79,15 @@ Player Hitbox that lowers health when hit by projectile
 
 ![image](https://user-images.githubusercontent.com/85975474/148617876-fa9d803c-13a0-42a0-90d6-30082c85a075.png)
 
+How the lives images are created
+
+![image](https://user-images.githubusercontent.com/85975474/148618782-980ab31b-3a2d-46d3-8eaa-8eabeeca052c.png)
+
+Method to remove a life
+
+![image](https://user-images.githubusercontent.com/85975474/148618774-5e688b85-7d0c-438b-a0bb-048e0f318f89.png)
+
+
 ### **Projectile**
 
 Creates the constructor for the Projectile 
