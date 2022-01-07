@@ -79,6 +79,21 @@ Player Hitbox that lowers health when hit by projectile
 
 ![image](https://user-images.githubusercontent.com/85975474/148617876-fa9d803c-13a0-42a0-90d6-30082c85a075.png)
 
+### **Projectile**
+
+Creates the constructor for the Projectile 
+
+![image](https://user-images.githubusercontent.com/85975474/148618583-85306b45-9b7f-4566-b202-f5e8124169b8.png)
+
+
+The behaviour methods of the Projectile
+
+![image](https://user-images.githubusercontent.com/85975474/148618577-e44fdd1d-ca97-4eba-9608-57c582bead0d.png)
+
+Getters and Setters of the Projectile
+
+![image](https://user-images.githubusercontent.com/85975474/148618605-618ef2c0-5a8c-4606-a4bb-2dd7584d5436.png)
+
 
 ### **Controls**
 These portions of code are binding the keys for movement and actions of each player
