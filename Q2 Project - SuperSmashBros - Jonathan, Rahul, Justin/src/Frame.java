@@ -115,12 +115,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 		if (health1 == 0) { //Albert Status
 			
-		Font a = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		Font a = new Font("Courier", Font.BOLD, 60);
 		g.setFont(a);
 		g.setColor(Color.RED);
 		//g.drawString("Betrand Wins", 300, 50);
 		Albert.setResHealth(100);
+		Albert.resPos();
 		Bertrand.setResHealth(100);
+		Bertrand.resPos2();
 		
 		//Lowers the number of "lives" by one each time health reaches 0
 		Stocks1[] temp = new Stocks1[A.length-1];
@@ -136,8 +138,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//removes one life from player 2 if they die
 		if (health2 == 0) {//Bertrand Status
 		Albert.setResHealth(100);
+		Albert.resPos();
 		Bertrand.setResHealth(100);
-		Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+		Bertrand.resPos2();
+		Font b = new Font("Courier", Font.BOLD, 60);
 		g.setFont(b);
 		g.setColor(Color.RED);
 		//g.drawString("Albert Wins", 300, 50);
@@ -161,8 +165,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//System.exit(0);
 			Albert.setResHealth(100);
 			Bertrand.setResHealth(100);
-			Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
-			g.setFont(b);
+			Font c = new Font("Courier", Font.BOLD, 60);
+			g.setFont(c);
 			g.setColor(Color.RED);
 			g.drawString("Bertrand Wins", 300, 50);
 		}	
@@ -171,7 +175,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			//System.exit(0);
 			Albert.setResHealth(100);
 			Bertrand.setResHealth(100);
-			Font b = new Font("Courier", Font.BOLD, 60);// following string is if the game is a one life system
+			Font b = new Font("Courier", Font.BOLD, 60);
 			g.setFont(b);
 			g.setColor(Color.RED);
 			g.drawString("Bertrand Wins", 300, 50);
@@ -215,6 +219,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//detects if Albert is hitting out of bounds
 		if(AlbertBound.intersects(StageBound)) {
 			Albert.resPos();
+			Albert.setResHealth(100);
 			
 			//Lowers the number of "lives" by one each time player goes out of bounds
 			Stocks1[] temp = new Stocks1[A.length-1];
@@ -237,6 +242,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		//detects if Bertrand is hitting out of bounds
 		if(BertrandBound.intersects(StageBound)) {
 			Bertrand.resPos2();
+			Bertrand.setResHealth(100);
 			
 			Stocks2[] temp = new Stocks2[B.length-1];
 			
