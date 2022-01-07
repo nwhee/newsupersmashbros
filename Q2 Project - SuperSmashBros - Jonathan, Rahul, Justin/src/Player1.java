@@ -116,7 +116,9 @@ public class Player1 {
 	
 	//moves the player right, changes their sprite if they turn
 	public void moveRight() {
-		x += speed;
+		if(x > 0 && x < 919) { 
+			x += speed;	
+		}
 		if(p1) {
 			img = getImage(p1Right);
 		}
@@ -127,7 +129,9 @@ public class Player1 {
 		
 	}
 	public void moveLeft() {
-		x -= speed;
+		if(x > 0 && x < 919) {
+			x -= speed;	
+		}
 		if(p1) {
 			img = getImage(p1Left);
 		}
@@ -169,13 +173,13 @@ public class Player1 {
 	//resetting the position of the player used for out of bounds hitbox
 	public void resPos() {  //Albert
 		x = 200;
-		y = 100;
+		y = 200;
 		fallSpeed = 0;
 	}
 	
 	public void resPos2() { //Bertrand
 		x = 750;
-		y = 100;
+		y = 200;
 		fallSpeed = 0;
 	}
 	
