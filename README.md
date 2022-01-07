@@ -8,6 +8,10 @@ https://drive.google.com/file/d/1NpXlch0TNNQHqcH43V-z4Iaq_0ayNDl7/view?usp=shari
 ### **Background**
 A random background is picked each time the game launches. There are three different backgrounds. 
 The Background class includes an array of images. 
+![image](https://user-images.githubusercontent.com/54755468/148613525-e7bd8a6d-e3ba-47fc-a8b9-bc51162067e4.png)
+![image](https://user-images.githubusercontent.com/54755468/148613556-4c737d7c-fe67-476c-9caf-443844c8d1b9.png)
+![image](https://user-images.githubusercontent.com/54755468/148613590-0df7ac2b-0f27-48e2-ad72-918596d3e141.png)
+
 
 ##### Background in Frame
 
