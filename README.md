@@ -42,8 +42,7 @@ The Background class includes an array of images.
 
 
 ###
-Code Walkthrough
-https://drive.google.com/file/d/1NpXlch0TNNQHqcH43V-z4Iaq_0ayNDl7/view?usp=sharing
+[Code Walkthrough](https://drive.google.com/file/d/1NpXlch0TNNQHqcH43V-z4Iaq_0ayNDl7/view?usp=sharing)
 
 ### Contributors
 - [Jonathan](https://github.com/nwhee)
