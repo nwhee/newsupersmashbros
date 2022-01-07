@@ -31,12 +31,59 @@ The Background class includes an array of images.
 ### **Stage**
 ![image](https://user-images.githubusercontent.com/85975474/148461684-08df4dab-774b-4cc5-8cfa-67ec936d82bd.png)
 
+- Create a hitbox around each player
+- Create a hitbox off the stage
+- If statement checks if the hitboxes intersected
+- If above is true then they lose a life and position is reset
+
+![image](https://user-images.githubusercontent.com/85975474/148617804-d70f5a4b-73f8-4c73-a1c4-1a7d1289bb3b.png)
+
+
+### **The Players**
+The constructor for the players
+
+![image](https://user-images.githubusercontent.com/85975474/148614340-5b9bdbf9-6c2b-445f-9ff3-1df2f6655c1a.png)
+
+The variables that the players use
+
+![image](https://user-images.githubusercontent.com/85975474/148614305-8e5706bd-c7a3-47f4-ba51-70cb69a08ff2.png)
+
+Behaviour Methods of the players
+
+![image](https://user-images.githubusercontent.com/85975474/148614727-94de5124-4db5-4b98-9f27-ee992a0bc4ab.png)
+
+![image](https://user-images.githubusercontent.com/85975474/148614746-fe5c217a-a652-4269-b9b0-59ef1850ffc0.png)
+
+
+The getters and setters of the players
+
+![image](https://user-images.githubusercontent.com/85975474/148614766-e11c76f6-c402-4a8c-9583-e32724ae6b7e.png)
+
+
+The creation and painting of both players
+
+![image](https://user-images.githubusercontent.com/85975474/148614220-4f91b03b-6f59-40f2-815b-563cc0f2220b.png)
+
+
+### **Health and Stocks**
+
+Check the players current health and display it
+
+![image](https://user-images.githubusercontent.com/85975474/148616017-2e264a06-b0fe-40bb-9a7d-81f7a821669a.png)
+
+If a players current health drops below 0 they lose a life and health and position is reset
+
+![image](https://user-images.githubusercontent.com/85975474/148617838-9ef9b54b-3938-4527-88ff-984f940696ca.png)
+
+Player Hitbox that lowers health when hit by projectile
+
+![image](https://user-images.githubusercontent.com/85975474/148617876-fa9d803c-13a0-42a0-90d6-30082c85a075.png)
+
 
 ### **Controls**
 These portions of code are binding the keys for movement and actions of each player
 
-##### - Player 1
-![image](https://user-images.githubusercontent.com/85975474/148459949-a0063a84-eed5-437b-86e5-0a0a43202115.png)
+##### - Player 1 ![image](https://user-images.githubusercontent.com/85975474/148459949-a0063a84-eed5-437b-86e5-0a0a43202115.png)
 
 ![image](https://github.com/nwhee/newsupersmashbros/blob/master/assets/Player%201%20Movement%20+%20Actions.PNG?raw=true)
 - A: Move Left
@@ -44,8 +91,7 @@ These portions of code are binding the keys for movement and actions of each pla
 - W: Jump
 - V: Fire Projectile
 
-##### - Player 2
-![image](https://user-images.githubusercontent.com/85975474/148460116-b2883ec6-8fd8-4373-9dfc-7435610775f1.png)
+##### - Player 2 ![image](https://user-images.githubusercontent.com/85975474/148460116-b2883ec6-8fd8-4373-9dfc-7435610775f1.png)
 
 ![image](https://user-images.githubusercontent.com/85975474/148611557-01e1a0ad-09fc-4236-9622-cf3ffaf5a2eb.png)
 - ← : Move Left
